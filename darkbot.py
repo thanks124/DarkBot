@@ -102,7 +102,7 @@ async def access(ctx, member: discord.Member):
 	
 @client.command(pass_context = True)
 @commands.has_permissions(kick_members=True)
-async def ccmakemod(ctx, *, msg = None, msg1 = None, msg2 = None):
+async def ccmakemod(ctx, *, msg = str, msg1 = str, msg2 = str):
     await client.delete_message(ctx.message)
 
     if not msg: await client.say("Please specify all arguments in form of ``d!ccmakemod <admin rolename> <mod rolename> <logging channel id>``")
