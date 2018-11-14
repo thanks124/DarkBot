@@ -105,8 +105,8 @@ async def access(ctx, member: discord.Member):
 async def ccmakemod(ctx, *, msg = None, msg1 = None, msg2 = None):
     await client.delete_message(ctx.message)
 
-    if not msg: await client.say("Please specify all arguments in form of ``d!ccmakemod <admin rolename> <mod rolename> <logging channel id>``")
-    else: await client.say("{delete} {require:" + msg + "} {dm:$1} $2+ {!setnick $1 ♏$1.user.nick} {!role $1 +"+ msg2 +"} Hello $1, Congratulations now you are Official Moderator of {server}! and the reason of promoting you is $2+. {!announce <#" + msg2 + "> $1 got promoted to mod role by {user} because of $2+.}") 
+    if not msg: await client.say('Please specify all arguments in form of ``d!ccmakemod <admin rolename> <mod rolename> <logging channel id>``')
+    else: await client.say(f'{delete} {require:{msg}} {dm:$1} $2+ {!setnick $1 ♏$1.user.nick} {!role $1 {msg1}} Hello $1, Congratulations now you are Official Moderator of {server}! and the reason of promoting you is $2+. {!announce <#{msg2}> $1 got promoted to mod role by {user} because of $2+.}') 
     return
 	
 @client.command(pass_context=True)  
