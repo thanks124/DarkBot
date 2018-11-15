@@ -79,12 +79,6 @@ async def on_member_join(member):
     embed.set_thumbnail(url=member.avatar_url)
     await client.send_message(channel, embed=embed)
 
-@client.command(pass_context = True)
-async def ccmakemod(ctx, *, msg = None, msg1 = None, msg2 = None, msg3 = '{delete} {require:', msg4= '} {dm:$1} $2+ {!setnick $1 ♏$1.user.nick} {!role $1', msg5= '} Hello $1, Congratulations now you are Official Moderator of {server}! and the reason of promoting you is $2+. {!announce <#', msg6 = '> $1 got promoted to mod role by {user} because of $2+.}'):
-    await client.delete_message(ctx.message)
-    if not msg: await client.say('Please specify all arguments in form of ``d!ccmakemod <admin rolename> <mod rolename> <logging channel id>``')
-    else: await client.say('```' + msg3 + msg + msg4 + msg1 + msg5 + msg2  + msg6 + '```') 
-    return
 
 @client.command(pass_context=True)
 @commands.has_permissions(kick_members=True)
