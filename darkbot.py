@@ -395,7 +395,7 @@ async def poll(ctx, question, *options: str):
 @client.command(pass_context = True)
 async def googlefy(ctx, *, msg = None):
     if msg.content == "@everyone":
-        return    if msg.content == "@everyone":
+        return
     if msg.content == "@here":
         return
     if not msg: await client.say("Please specify a string")
