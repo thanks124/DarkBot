@@ -627,10 +627,6 @@ async def serverinfo(ctx):
 @commands.has_permissions(kick_members=True)
 async def norole(ctx, *, msg = None):
     await client.delete_message(ctx.message)
-    if msg.content == "@everyone":
-        return
-    if msg.content == "@here":
-        return
     if not msg: await client.say("Please specify a user to warn")
     else: await client.say(msg + ', Please Do not ask for promotions check Rules again.')
     return
