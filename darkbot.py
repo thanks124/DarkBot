@@ -580,7 +580,8 @@ async def say(ctx, *, msg = None):
 @commands.has_permissions(kick_members=True)
 async def rules(ctx, *, msg = None):
     await client.delete_message(ctx.message)
-
+    if '@here' in msg or '@everyone' in msg:
+      return
     if not msg: await client.say("Please specify a user to warn")
     else: await client.say(msg + ', Please Read Rules again and never break any one of them again otherwise i will mute/kick/ban you next time.')
     return
@@ -627,18 +628,18 @@ async def serverinfo(ctx):
 @commands.has_permissions(kick_members=True)
 async def norole(ctx, *, msg = None):
     await client.delete_message(ctx.message)
+    if '@here' in msg or '@everyone' in msg:
+      return
     if not msg: await client.say("Please specify a user to warn")
     else: await client.say(msg + ', Please Do not ask for promotions check Rules again.')
     return
 
 @client.command(pass_context = True)
 async def happybirthday(ctx, *, msg = None):
-    if msg.content == "@everyone":
-        return
-    if msg.content == "@here":
-        return
+    if '@here' in msg or '@everyone' in msg:
+      return
     if not msg: await client.say("Please specify a user to wish")
-    else: await client.say('Happy birthday ' + msg + '\nhttps://asset.holidaycardsapp.com/assets/card/b_day399-22d0564f899cecd0375ba593a891e1b9.png')
+    await client.say('Happy birthday ' + msg + ' \nhttps://asset.holidaycardsapp.com/assets/card/b_day399-22d0564f899cecd0375ba593a891e1b9.png')
     return
 
 	
@@ -646,76 +647,50 @@ async def happybirthday(ctx, *, msg = None):
 @commands.has_permissions(kick_members=True)
 async def english(ctx, *, msg = None):
     await client.delete_message(ctx.message)
-
+    if '@here' in msg or '@everyone' in msg:
+      return
     if not msg: await client.say("Please specify a user to warn")
     else: await client.say(msg + ', Please do not use language other than **English.**')
     return
 
-@client.command(pass_context = True)
-async def brb(ctx, *, msg = None):
-    await client.delete_message(ctx.message)
-    if msg.content == "@everyone":
-        return
-    if msg.content == "@here":
-        return
-    if not msg: await client.say("Please specify a string")
-    else: await client.say('This user is brb for ' + msg)
-    return
-
-@client.command(pass_context = True)
-@commands.has_permissions(kick_members=True)
-async def welcomedbs(ctx, *, msg = None):
-    await client.delete_message(ctx.message)
-
-    if not msg: await client.say("Please specify a user to welcome")
-    else: await client.say('Welcome' + msg +  ', Please check <#474572305192845312> and never try to break any one of them')
-    return
-
 
 @client.command(pass_context = True) 
-
 async def htmltutorial(ctx, *, msg = None):
     await client.delete_message(ctx.message)
-    if msg.content == "@everyone":
-        return
-    if msg.content == "@here":
-        return
+    if '@here' in msg or '@everyone' in msg:
+      return
     if not msg: await client.say("Please specify a user")
     else: await client.say('Welcome' + msg +  ', Please check http://uksoft.000webhostapp.com/Programming-Tutorials/index.html')
     return
    
 @client.command(pass_context = True)
 async def github(ctx, *, msg = None):
-    if msg.content == "@everyone":
-        return
-    if msg.content == "@here":
-        return
+    if '@here' in msg or '@everyone' in msg:
+      return
     if not msg: await client.say("Please specify respo. ``Format- https://github.com/uksoftworld/DarkBot``")
     else: await client.say('https://github.com/' + msg)
     return
 
 @client.command(pass_context = True)
 async def reactionroles(ctx, *, msg = None):
+    if '@here' in msg or '@everyone' in msg:
+      return
     if not msg: await client.say("Check this video to setup YAGPDB BOT- https://www.youtube.com/watch?v=icAqiw6txRQ")
     else: await client.say('Check this video to setup YAGPDB BOT- https://www.youtube.com/watch?v=icAqiw6txRQ ' + msg)
     return
 
 @client.command(pass_context = True)
 async def bottutorial(ctx, *, msg = None):
-    if msg.content == "@everyone":
-        return
-    if msg.content == "@here":
-        return
+    if '@here' in msg or '@everyone' in msg:
+      return
     if not msg: await client.say("Tutorial not found or maybe you have mistyped it")
     else: await client.say('https://github.com/uksoftworld/discord.py-tutorial/blob/master/' + msg + '.py')
     return
 
 @client.command(pass_context = True)
 async def dyno(ctx, *, msg = None):
-    if msg.content == "@everyone":
-        return
-    if msg.content == "@here":
-        return
+    if '@here' in msg or '@everyone' in msg:
+      return
     if not msg: await client.say("Command name not found or maybe you have mistyped it")
     else: await client.say('https://github.com/uksoftworld/dynoCC/blob/master/' + msg)
     return
