@@ -653,6 +653,16 @@ async def english(ctx, *, msg = None):
     else: await client.say(msg + ', Please do not use language other than **English.**')
     return
 
+@client.command(pass_context = True)
+@commands.has_permissions(kick_members=True)
+async def hindi(ctx, *, msg = None):
+    await client.delete_message(ctx.message)
+    if '@here' in msg or '@everyone' in msg:
+      return
+    if not msg: await client.say("Please specify a user to warn")
+    else: await client.say(msg + ' abe oo angrez ke bacche chup chap hindi me baat kar nahi to mai pagla jaunga')
+    return
+r
 
 @client.command(pass_context = True) 
 async def htmltutorial(ctx, *, msg = None):
