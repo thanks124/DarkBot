@@ -662,7 +662,7 @@ async def hindi(ctx, *, msg = None):
     if not msg: await client.say("Please specify a user to warn")
     else: await client.say(msg + ' abe oo angrez ke bacche chup chap hindi me baat kar nahi to mai pagla jaunga')
     return
-r
+
 
 @client.command(pass_context = True) 
 async def htmltutorial(ctx, *, msg = None):
